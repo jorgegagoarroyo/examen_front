@@ -43,7 +43,7 @@ export default {
                     throw "ya has ingresado"
                 }
                 console.log(this.usuario.user, this.usuario.pass)
-                const req = await fetch("https://api-mascotas-jorge.herokuapp.com/api/login", {
+                const req = await fetch("https://localhost:8000/api/login", {
                     method: 'POST',
                     headers: { 'Content-type': 'application/json; charset=UTF-8' },
                     body: JSON.stringify(this.usuario)
