@@ -60,7 +60,7 @@ export default {
                     }
                     throw error
                 }
-                let response = await fetch("https://https://localhost:8000/api/registro",{
+                let response = await fetch("https://localhost:8000/api/registro",{
                     method:"post",
                     headers:{
                         'Content-type': 'application/json; charset=UTF-8'

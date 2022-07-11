@@ -32,7 +32,7 @@ methods:{
         try{
             let local = localStorage.getItem("mascotas")
             let localToken = JSON.parse(local).token
-            let response = await fetch ("https://https://localhost:8000/api/usuarios",{
+            let response = await fetch ("https://localhost:8000/api/usuarios",{
                 method: "get",
                 headers: {
                     'authorization' : `Bearer ${localToken}`,
@@ -51,7 +51,7 @@ methods:{
         try{
             let local = localStorage.getItem("mascotas")
             let localToken = JSON.parse(local).token
-            await fetch (`https://https://localhost:8000/api/usuarios/${usuario._id}`,{
+            await fetch (`https://localhost:8000/api/usuarios/${usuario._id}`,{
                 method: "DELETE",
                 headers:{
                     'authorization' : `Bearer ${localToken}`,

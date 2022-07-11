@@ -91,7 +91,7 @@ methods:{
         this.descp = ""
     },
     async obtenerMascotas(){
-        let listaMas = await fetch('https://https://localhost:8000/api/mascotas', {
+        let listaMas = await fetch('http://localhost:8000/api/mascotas', {
             method:'GET'
         }),
         listaMas2 = await listaMas.json()
@@ -105,18 +105,20 @@ methods:{
             if(!localToken){
                 throw "no token"
             }
-            // await fetch('https://https://localhost:8000/api/mascotas', {
-            //     method:'POST',
-            //     headers: { 
-            //         'authorization': `Bearer ${localToken}`,
-            //         'Content-type': 'application/json; charset=UTF-8'
-            //     },
-            //     body:JSON.stringify({
-            //         'nombre': `${this.nombre}`,
-            //         'desc': `${this.descp}`
-            //     }),
+            await fetch('https://localhost:8000/api/mascotas', {
+                method:'POST',
+                headers: { 
+                    'authorization': `Bearer ${localToken}`,
+                    'Content-type': 'application/json; charset=UTF-8'
+                },
+                body:JSON.stringify({
+                    'nombre': `${this.nombre}`,
+                    'desc': `${this.descp}`,
+                    'foto': `${this.nombre_foto}`
+
+                }),
                 
-            // }),
+            }),
             this.finCrearMascota()
             this.obtenerMascotas()
         }catch(error){
@@ -137,7 +139,7 @@ methods:{
                 throw "no token"
             }
             //let nuevosDatos = ""
-            let editado = await fetch(`https://https://localhost:8000/api/mascotas/${mascota._id}`, {
+            let editado = await fetch(`http://localhost:8000/api/mascotas/${mascota._id}`, {
                 method:'PUT',
                 body:
                     JSON.stringify({
@@ -175,7 +177,7 @@ methods:{
             if(!localToken){
                 throw "no token"
             }
-            let editado = await fetch(`https://https://localhost:8000/api/mascotas/${mascota._id}`, {
+            let editado = await fetch(`http://localhost:8000/api/mascotas/${mascota._id}`, {
                 method:'DELETE',
                 headers:{
                     authorization: `bearer ${localToken}`
@@ -207,18 +209,18 @@ methods:{
 
         console.log("foto_subir ",file)
         try{
-            this.nombre_foto = await fetch("https:/https://localhost:8000/api/upload", {
+            let name_foto = await fetch("http://localhost:8000/api/upload", {
             method: "post",
-            // body:JSON.stringify({
-            //     "foto_subir": `${this.$refs.foto_mascota.value}`
-            // }),
+
             body: formData,
             headers:{
                     authorization: `bearer ${localToken}`
                 }
         })
-        //this.$refs.foto_mascota.value
-        console.log(this.nombre_foto.mensaje)
+        name_foto = await name_foto.json()
+        this.nombre_foto = name_foto.name
+        console.log(this.nombre_foto)
+
         }catch(error){
             console.log(error)
         }
