@@ -105,7 +105,7 @@ methods:{
             if(!localToken){
                 throw "no token"
             }
-            await fetch('https://localhost:8000/api/mascotas', {
+            await fetch('http://localhost:8000/api/mascotas', {
                 method:'POST',
                 headers: { 
                     'authorization': `Bearer ${localToken}`,
