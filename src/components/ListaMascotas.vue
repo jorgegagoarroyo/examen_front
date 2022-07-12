@@ -91,7 +91,7 @@ methods:{
         this.descp = ""
     },
     async obtenerMascotas(){
-        let listaMas = await fetch('http://localhost:8000/api/mascotas', {
+        let listaMas = await fetch('https://api-mascotas-jorge.herokuapp.com/api/mascotas', {
             method:'GET'
         }),
         listaMas2 = await listaMas.json()
@@ -105,7 +105,7 @@ methods:{
             if(!localToken){
                 throw "no token"
             }
-            await fetch('http://localhost:8000/api/mascotas', {
+            await fetch('https://api-mascotas-jorge.herokuapp.com/api/mascotas', {
                 method:'POST',
                 headers: { 
                     'authorization': `Bearer ${localToken}`,
@@ -139,7 +139,7 @@ methods:{
                 throw "no token"
             }
             //let nuevosDatos = ""
-            let editado = await fetch(`http://localhost:8000/api/mascotas/${mascota._id}`, {
+            let editado = await fetch(`https://api-mascotas-jorge.herokuapp.com/api/mascotas/${mascota._id}`, {
                 method:'PUT',
                 body:
                     JSON.stringify({
@@ -177,7 +177,7 @@ methods:{
             if(!localToken){
                 throw "no token"
             }
-            let editado = await fetch(`http://localhost:8000/api/mascotas/${mascota._id}`, {
+            let editado = await fetch(`https://api-mascotas-jorge.herokuapp.com/api/mascotas/${mascota._id}`, {
                 method:'DELETE',
                 headers:{
                     authorization: `bearer ${localToken}`
@@ -209,7 +209,7 @@ methods:{
 
         console.log("foto_subir ",file)
         try{
-            let name_foto = await fetch("http://localhost:8000/api/upload", {
+            let name_foto = await fetch("https://api-mascotas-jorge.herokuapp.com/api/upload", {
             method: "post",
 
             body: formData,
