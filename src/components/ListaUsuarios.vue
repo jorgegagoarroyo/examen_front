@@ -55,7 +55,7 @@ methods:{
                 method: "DELETE",
                 headers:{
                     'authorization' : `Bearer ${localToken}`,
-                    'Content-type': 'application/json; charset=UTF-8'
+                    'Content-type': 'application/json; charset=UTF-8'  
                 }
         })
         }catch(error){
