@@ -14,8 +14,8 @@
                 <input type="text" v-model="descp">
             </div>
             <div class="row mt-2 mb-2">
-                <label>Foto</label>
-                <input class="form-control " ref="foto_mascota" type="file" @change="subirImagen"><!--todavia no implementado -->
+                <!-- <label>Foto</label>
+                <input class="form-control " ref="foto_mascota" type="file" @change="subirImagen">todavia no implementado -->
             </div>
             <div class="row overflow-hidden d-flex justify-content-center ">
                 <div class="col-3 ">
@@ -114,7 +114,7 @@ methods:{
                 body:JSON.stringify({
                     'nombre': `${this.nombre}`,
                     'desc': `${this.descp}`,
-                    'foto': `${this.nombre_foto}`
+                    // 'foto': `${this.nombre_foto}`
 
                 }),
                 
