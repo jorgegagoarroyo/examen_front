@@ -4,6 +4,6 @@
 // })
 
 module.exports = {
-  publicPath : '/examen_front'
+  publicPath : 'examen_front'
 }
 
