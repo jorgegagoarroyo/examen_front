@@ -31,10 +31,10 @@
     <div class="row d-flex">
         <div class="mt-2 col-sm-12 col-md-6  col-xl-4" v-for="mascota in mascotas" :key="mascota._id">
             <div class="card">
-                <img src="#" class="card-img-top  img-mascota" alt="img mascota">
+                <img src="https://cdn.pixabay.com/photo/2016/10/10/14/13/dog-1728494_960_720.png" class="card-img-top  img-mascota" alt="img mascota">
                 <div v-if="editando === mascota._id">
                     <div class="card-body">
-                        <input class="form-control m-2" type="file">
+                        <!-- <input class="form-control m-2" type="file"> -->
                         <h5 class="card-title">
                             <input type="text" class="col" v-model="mascota.nombre">
                             </h5>

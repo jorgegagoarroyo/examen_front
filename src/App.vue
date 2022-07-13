@@ -40,7 +40,7 @@ export default {
     outUser(){
       this.rol = false
       localStorage.clear()
-      this.$router.go()
+      //this.$router.go("/")
     },
     entrarRol(){
       let act = localStorage.getItem("mascotas")
